@@ -1,2 +1,2 @@
 #!/bin/bash
-docker build -t vertigo/wso2is .
+docker build -t vertigo/docker-wso2is .

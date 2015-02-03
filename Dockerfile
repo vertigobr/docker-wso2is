@@ -1,6 +1,6 @@
 # WSO2 Identity Manager
 
-FROM vertigo/docker-base:latest
+FROM vertigo/docker-java:latest
 
 MAINTAINER Andre Fernandes
 
