@@ -12,6 +12,14 @@ RUN wget -q -O /opt/wso2is.zip http://172.17.42.1/wso2is-5.0.0.zip && \
     rm /opt/wso2is.zip && \
     ln -s wso2is-5.0.0 wso2is
 
+ADD startwso2is.sh /opt/startwso2is.sh
+ADD initwso2repo.sh /opt/initwso2repo.sh
+
+RUN chmod +x /opt/startwso2is.sh && \
+    chmod +x /opt/initwso2repo.sh
+
 EXPOSE 9443 9763
 
-CMD ["/opt/wso2is/bin/wso2server.sh", "start"]
+VOLUME /opt/wso2is/repository
+
+CMD /opt/startwso2is.sh
